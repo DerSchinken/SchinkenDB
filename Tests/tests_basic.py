@@ -1,6 +1,6 @@
 from SchinkenDB import SchinkenClient
 
-db_client = SchinkenClient("https://localhost", "admin", "admin")
+db_client = SchinkenClient("http://localhost/", "admin", "admin")
 
 if __name__ == '__main__':
     try:

@@ -22,7 +22,7 @@ class SchinkenHost(object):
     """
     version = "1.0.0"
 
-    def __init__(self, database_name, host: str = "0.0.0.0", port: int = 7070) -> None:
+    def __init__(self, database_name: str, host: str = "0.0.0.0", port: int = 7070) -> None:
         self.data = {}
         self.server = None
 
@@ -139,6 +139,9 @@ class SchinkenClient(object):
     version = "1.0.0"
 
     def __init__(self, host: str, user: str, password: str, port: int = 7070) -> None:
+        if host.endswith("/"):
+            host = host[:-1]
+
         self.host = host
         self.port = port
         self.user = user
